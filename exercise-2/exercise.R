@@ -8,7 +8,7 @@ salaries.2014 <- runif(100, 40000, 50000)
 salaries.2015 <- salaries.2014 + runif(100, -5000, 10000)
 
 # Create a data.frame 'salaries' by combining the vectors you just made
-salaries <- data.frame(employees, salaries.2014, salaries.2015)
+salaries <- data.frame(employees, salaries.2014, salaries.2015, stringsAsFactors = FALSE)
 
 # Create a column 'raise' that stores the size of the raise between 2014 and 2015
 salaries$raise <- salaries.2015 - salaries.2014
