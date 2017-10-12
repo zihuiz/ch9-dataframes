@@ -21,20 +21,23 @@ org <- grants$organization
 ### Now you can ask some more interesting questions about the dataset.  Store your answers in variables ###
 
 # What was the mean grant value?
-# mean(grants$total_amount)
+# mean(spending)
 
 # What was the dollar amount of the largest grant?
-# max(grants$total_amount)
+# max(spending)
 
 # What was the dollar amount of the smallest grant?
-# min(grants$total_amount)
+# min(spending)
 
 # Which organization received the largest grant?
 # grants$organization[grants$total_amount == max(grants$total_amount)]
+# org{spending == max(spending)}
 
 # Which organization received the smallest grant?
 # grants$organization[grants$total_amount == min(grants$total_amount)]
+# org{spending == min(spending)}
+
 
 # How many grants were awarded in 2010?
-awarded <- grants$organization[grants$start_year == 2010]
+awarded <- spending[grants$start_year == 2010]
 num.of.awarded.in.2010 <- length(awarded)
