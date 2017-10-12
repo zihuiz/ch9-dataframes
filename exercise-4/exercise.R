@@ -2,34 +2,39 @@
 
 # Read data into a variable called `grants` using the `read.csv` function
 # Make sure *not* to read the strings as factors
+# setwd("~/Desktop/ch9-dataframes/exercise-4/")
+grants <- read.csv('gates_money.csv', stringsAsFactors=FALSE)
 
 # Use the View function to look at your data
-
+# View(grants)
 
 # Create a variable `spending` as the `total_amount` column of the dataset
-
+spending <- grants$total_amount
 
 # Confirm that your `spending` variable is a vector using the `is.vector` function
-
+# is.vector(spending)
+# [1] TRUE
 
 # Create a variable `org` as the `organization` column of the dataset.
-
+org <- grants$organization
 
 ### Now you can ask some more interesting questions about the dataset.  Store your answers in variables ###
 
 # What was the mean grant value?
-
+# mean(grants$total_amount)
 
 # What was the dollar amount of the largest grant?
-
+# max(grants$total_amount)
 
 # What was the dollar amount of the smallest grant?
-
+# min(grants$total_amount)
 
 # Which organization received the largest grant?
-
+# grants$organization[grants$total_amount == max(grants$total_amount)]
 
 # Which organization received the smallest grant?
-
+# grants$organization[grants$total_amount == min(grants$total_amount)]
 
 # How many grants were awarded in 2010?
+awarded <- grants$organization[grants$start_year == 2010]
+num.of.awarded.in.2010 <- length(awarded)
